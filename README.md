@@ -1,6 +1,6 @@
 # Craftbeerpi4 Kettle Logic Plugin
 
-##PID Logic with boil threshold.
+###PID Logic with boil threshold.
 
 If the target Temperature is above a configurable threshold the PID will be ignored and heater is switched on constantly. This is helpful if you use the same kettle for mashing and boiling.
 
