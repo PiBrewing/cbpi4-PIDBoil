@@ -19,7 +19,7 @@ class PIDBoil(CBPiKettleLogic):
         pass
 
     async def run(self):
-
+        try:
             wait_time = sampleTime = 5
             p = float(self.props.get("P", 117.0795))
             i = float(self.props.get("I", 0.2747))
@@ -47,6 +47,15 @@ class PIDBoil(CBPiKettleLogic):
                     await asyncio.sleep(heating_time)
                     await self.actor_off(self.heater)
                     await asyncio.sleep(wait_time)
+
+
+        except asyncio.CancelledError as e:
+            pass
+        except Exception as e:
+            logging.error("BM_PIDSmartBoilWithPump Error {}".format(e))
+        finally:
+            self.running = False
+            await self.actor_off(self.heater)
 
 # Based on Arduino PID Library
 # See https://github.com/br3ttb/Arduino-PID-Library
