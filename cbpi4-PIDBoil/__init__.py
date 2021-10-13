@@ -43,10 +43,12 @@ class PIDBoil(CBPiKettleLogic):
                     heat_percent = pid.calc(sensor_value, target_temp)
                     heating_time = sampleTime * heat_percent / 100
                     wait_time = sampleTime - heating_time
-                    await self.actor_on(self.heater)
-                    await asyncio.sleep(heating_time)
-                    await self.actor_off(self.heater)
-                    await asyncio.sleep(wait_time)
+                    if heating_time > 0:
+                        await self.actor_on(self.heater)
+                        await asyncio.sleep(heating_time)
+                    if wait_time > 0:
+                        await self.actor_off(self.heater)
+                        await asyncio.sleep(wait_time)
 
 
         except asyncio.CancelledError as e:
