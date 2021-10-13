@@ -7,8 +7,8 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(name='cbpi4-PIDBoil',
-      version='0.0.3',
-      description='CraftBeerPi Plugin',
+      version='0.0.4',
+      description='CraftBeerPi4 PID Kettle Control Plugin',
       author='Alexander Vollkopf',
       author_email='avollkopf@web.de',
       url='https://github.com/avollkopf/cbpi4-PIDBoil',
