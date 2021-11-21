@@ -1,6 +1,6 @@
 # Craftbeerpi4 Kettle Logic Plugin
 
-### PID Logic with boil threshold.
+## PID Logic with boil threshold.
 
 If the target Temperature is above a configurable threshold the PID will be ignored and heater is switched on to the max output value. This is helpful if you use the same kettle for mashing and boiling.
 
@@ -8,35 +8,30 @@ Once the boil threshold temperature is reached, the boil will be done with the m
 
 
 ### Installation:
-	You can install it directly via pypi.org:	
-	- sudo pip3 install cbpi4-PIDBoil 
 
-	Alternativeley you can install (or clone) it from the GIT Repo. In case of updates, you will find them here first:
-	- sudo pip3 install https://github.com/avollkopf/cbpi4-PIDBoil/archive/main.zip
+You can install it directly via pypi.org:	
+- sudo pip3 install cbpi4-PIDBoil 
 
-	Afterwards you will need to activate the plugin:
-	- cbpi add cbpi4-PIDBoil
+Alternativeley you can install (or clone) it from the GIT Repo. In case of updates, you will find them here first:
+- sudo pip3 install https://github.com/avollkopf/cbpi4-PIDBoil/archive/main.zip
+
+Afterwards you will need to activate the plugin:
+- cbpi add cbpi4-PIDBoil
 	
-	- cbpi >= 4.0.0.45 from my fork is required. The setup will check, if this repo is installed
+- cbpi >= 4.0.0.45 from my fork is required. The setup will check, if this repo is installed
 
 
 ### Parameters
 
 ![PIDBoil Settings](https://github.com/avollkopf/cbpi4-PIDBoil/blob/main/cbpi4-PIDBoil-logic.png?raw=true)
 
-	P - proportional value
-
-	I - integral value
-
-	D - derivative value
-
-	SampleTime - 2 or 5 seconds -> how often the logic calculates the power setting
-
-	max output - heater power which is set above boil threshold
-
-	Boil Threshold - Above this temperature the heater will be set to Max Boil Output Power (default: 98°C / 208F)
-
-	Max Boil Output - Power (%) that is used above Boil Threshold Temperature (default: 100%)
+- P - proportional value
+- I - integral value
+- D - derivative value
+- SampleTime - 2 or 5 seconds -> how often the logic calculates the power setting
+- max output - heater power which is set above boil threshold
+- Boil Threshold - Above this temperature the heater will be set to Max Boil Output Power (default: 98°C / 208F)
+- Max Boil Output - Power (%) that is used above Boil Threshold Temperature (default: 100%)
 
 ### Changelog
 
