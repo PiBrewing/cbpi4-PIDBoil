@@ -1,28 +1,42 @@
 # Craftbeerpi4 Kettle Logic Plugin
 
-### PID Logic with boil threshold.
+## PID Logic with boil threshold.
 
-If the target Temperature is above a configurable threshold the PID will be ignored and heater is switched on constantly. This is helpful if you use the same kettle for mashing and boiling.
+If the target Temperature is above a configurable threshold the PID will be ignored and heater is switched on to the max output value. This is helpful if you use the same kettle for mashing and boiling.
 
-The code is ported form the cbpi3 version with some minor fixes and additional features( >= 0.0.3)
+Once the boil threshold temperature is reached, the boil will be done with the max boil output power
 
-### Parameter
 
-	P - proportional value
+### Installation:
 
-	I - integral value
+You can install it directly via pypi.org:	
+- sudo pip3 install cbpi4-PIDBoil 
 
-	D - derivative value
+Alternativeley you can install (or clone) it from the GIT Repo. In case of updates, you will find them here first:
+- sudo pip3 install https://github.com/avollkopf/cbpi4-PIDBoil/archive/main.zip
 
-	max output - heater power which is set above boil threshold
+Afterwards you will need to activate the plugin:
+- cbpi add cbpi4-PIDBoil
+	
+- cbpi >= 4.0.0.45 from my fork is required. The setup will check, if this repo is installed
 
-	Boil Threshold - Above this temperature the heater will be set to Max Boil Output Power (default: 98°C / 208F)
 
-	Max Boil Output - Power (%) that is used above Boil Threshold Temperature (default: 100%)
+### Parameters
+
+![PIDBoil Settings](https://github.com/avollkopf/cbpi4-PIDBoil/blob/main/cbpi4-PIDBoil-logic.png?raw=true)
+
+- P - proportional value
+- I - integral value
+- D - derivative value
+- SampleTime - 2 or 5 seconds -> how often the logic calculates the power setting
+- max output - heater power which is set above boil threshold
+- Boil Threshold - Above this temperature the heater will be set to Max Boil Output Power (default: 98°C / 208F)
+- Max Boil Output - Power (%) that is used above Boil Threshold Temperature (default: 100%)
 
 ### Changelog
 
-- 19.08.21: Initial commit (0.0.1)
-- 12.10.21: Bug fixing MashStep Automode Issue (0.0.2)
-- 13.10.21: Improvement of actor toggling in case of 0% or 100% heating (0.0.3)
+- 21.11.21: Adapted to cbpi4 4.0.0.45 to accomodate actor power settings incl. the PWM Actor.
 - 13.10.21: Added Power setting for Boil (0.0.4)
+- 13.10.21: Improvement of actor toggling in case of 0% or 100% heating (0.0.3)
+- 12.10.21: Bug fixing MashStep Automode Issue (0.0.2)
+- 19.08.21: Initial commit (0.0.1)
