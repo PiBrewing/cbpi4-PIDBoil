@@ -35,8 +35,9 @@ Afterwards you will need to activate the plugin:
 
 ### Changelog
 
-- 21.11.21: Adapted to cbpi4 4.0.0.45 to accomodate actor power settings incl. the PWM Actor.
-- 13.10.21: Added Power setting for Boil (0.0.4)
-- 13.10.21: Improvement of actor toggling in case of 0% or 100% heating (0.0.3)
-- 12.10.21: Bug fixing MashStep Automode Issue (0.0.2)
-- 19.08.21: Initial commit (0.0.1)
+- 01.12.21: (0.0.6) If current kettle power is different from kettle logic. logic will overrule kettle power setting
+- 21.11.21: (0.0.5) Adapted to cbpi4 4.0.0.45 to accomodate actor power settings incl. the PWM Actor.
+- 13.10.21: (0.0.4) Added Power setting for Boil
+- 13.10.21: (0.0.3) Improvement of actor toggling in case of 0% or 100% heating
+- 12.10.21: (0.0.2) Bug fixing MashStep Automode Issue
+- 19.08.21: (0.0.1) Initial commit
