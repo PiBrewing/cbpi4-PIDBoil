@@ -35,12 +35,14 @@ class PIDBoil(CBPiKettleLogic):
             self.kettle = self.get_kettle(self.id)
             self.heater = self.kettle.heater
             heat_percent_old = maxout
-           
+            self.heater_actor = self.cbpi.actor.find_by_id(self.heater)
+                       
             await self.actor_on(self.heater, maxout)
 
             pid = PIDArduino(sampleTime, p, i, d, 0, maxout)
 
             while self.running == True:
+                current_kettle_power= self.heater_actor.power
                 sensor_value = current_temp = self.get_sensor_value(self.kettle.sensor).get("value")
                 target_temp = self.get_kettle_target_temp(self.id)
                 if current_temp >= float(maxtempboil):
@@ -49,19 +51,10 @@ class PIDBoil(CBPiKettleLogic):
                     heat_percent = pid.calc(sensor_value, target_temp)
 
                 
-                if heat_percent_old != heat_percent:
+                if (heat_percent_old != heat_percent) or (heat_percent != current_kettle_power):
                     await self.actor_set_power(self.heater, heat_percent)
                     heat_percent_old= heat_percent
                 await asyncio.sleep(sampleTime)
-#                heating_time = sampleTime * heat_percent / 100
-#                wait_time = sampleTime - heating_time
-#                if heating_time > 0:
-#                    await self.actor_on(self.heater)
-#                    await asyncio.sleep(heating_time)
-#                if wait_time > 0:
-#                    await self.actor_off(self.heater)
-#                    await asyncio.sleep(wait_time)
-
 
         except asyncio.CancelledError as e:
             pass
