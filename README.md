@@ -15,11 +15,6 @@ You can install it directly via pypi.org:
 Alternativeley you can install (or clone) it from the GIT Repo. In case of updates, you will find them here first:
 - sudo pip3 install https://github.com/avollkopf/cbpi4-PIDBoil/archive/main.zip
 
-Afterwards you will need to activate the plugin:
-- cbpi add cbpi4-PIDBoil
-	
-- cbpi >= 4.0.0.45 from my fork is required. The setup will check, if this repo is installed
-
 
 ### Parameters
 
@@ -35,6 +30,7 @@ Afterwards you will need to activate the plugin:
 
 ### Changelog
 
+- 10.05.22: (0.0.8) Updated README (removed cbpi add)
 - 10.05.22: (0.0.7) Removed cbpi dependency
 - 01.12.21: (0.0.6) If current kettle power is different from kettle logic. logic will overrule kettle power setting
 - 21.11.21: (0.0.5) Adapted to cbpi4 4.0.0.45 to accomodate actor power settings incl. the PWM Actor.
