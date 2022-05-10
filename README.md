@@ -35,6 +35,7 @@ Afterwards you will need to activate the plugin:
 
 ### Changelog
 
+- 10.05.22: (0.0.7) Removed cbpi dependency
 - 01.12.21: (0.0.6) If current kettle power is different from kettle logic. logic will overrule kettle power setting
 - 21.11.21: (0.0.5) Adapted to cbpi4 4.0.0.45 to accomodate actor power settings incl. the PWM Actor.
 - 13.10.21: (0.0.4) Added Power setting for Boil

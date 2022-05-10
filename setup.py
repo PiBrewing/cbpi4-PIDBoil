@@ -18,9 +18,6 @@ setup(name='cbpi4-PIDBoil',
       '': ['*.txt', '*.rst', '*.yaml'],
       'cbpi4-PIDBoil': ['*','*.txt', '*.rst', '*.yaml']},
       packages=['cbpi4-PIDBoil'],
-      install_requires=[
-            'cbpi',
-      ],
 	  long_description=long_description,
 	  long_description_content_type='text/markdown'
      )
