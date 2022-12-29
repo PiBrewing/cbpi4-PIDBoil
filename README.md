@@ -30,6 +30,7 @@ Alternativeley you can install (or clone) it from the GIT Repo. In case of updat
 
 ### Changelog
 
+- 29.12.22: (0.0.9) Fixed Bug related to Boil Threshold Parameter
 - 10.05.22: (0.0.8) Updated README (removed cbpi add)
 - 10.05.22: (0.0.7) Removed cbpi dependency
 - 01.12.21: (0.0.6) If current kettle power is different from kettle logic. logic will overrule kettle power setting
