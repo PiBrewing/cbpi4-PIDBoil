@@ -30,7 +30,7 @@ class PIDBoil(CBPiKettleLogic):
             i = float(self.props.get("I", 0.2747))
             d = float(self.props.get("D", 41.58))
             maxout = int(self.props.get("Max_Output", 100))
-            maxtempboil = float(self.props.get("Boil_Treshold", boilthreshold))
+            maxtempboil = float(self.props.get("Boil_Threshold", boilthreshold))
             maxboilout = int(self.props.get("Max_Boil_Output", 100))
             self.kettle = self.get_kettle(self.id)
             self.heater = self.kettle.heater
