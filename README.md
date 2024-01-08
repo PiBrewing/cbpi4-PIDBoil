@@ -9,11 +9,10 @@ Once the boil threshold temperature is reached, the boil will be done with the m
 
 ### Installation:
 
-You can install it directly via pypi.org:	
-- sudo pip3 install cbpi4-PIDBoil 
+Please have a look at the [Craftbeerpi4 Documentation](https://openbrewing.gitbook.io/craftbeerpi4_support/readme/plugin-installation)
 
-Alternativeley you can install (or clone) it from the GIT Repo. In case of updates, you will find them here first:
-- sudo pip3 install https://github.com/avollkopf/cbpi4-PIDBoil/archive/main.zip
+- Package name: cbpi4-PIDBoil
+- Package link: https://github.com/PiBrewing/cbpi4-pidboil/archive/main.zip
 
 
 ### Parameters
